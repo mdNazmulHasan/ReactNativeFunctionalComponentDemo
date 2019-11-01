@@ -1,7 +1,6 @@
 import React from 'react';
 import {View, Text, StyleSheet, Image} from 'react-native';
 import avatar from '../../assets/avatar/avatar.png';
-import Header from '../components/Header';
 
 const styles = StyleSheet.create({
   headerStyle: {
@@ -12,19 +11,20 @@ const styles = StyleSheet.create({
   imageStyle: {
     marginRight: 20,
   },
+  containerStyle: {
+    flexDirection: 'row',
+    justifyContent: 'space-between',
+  },
 });
 
-const Business = props => {
+const Header = props => {
   return (
-    <View>
-      <Text>Business</Text>
+    <View style={styles.containerStyle}>
+      <View />
+      <Text style={styles.headerStyle}>{props.title}</Text>
+      <Image source={avatar} style={styles.imageStyle} />
     </View>
   );
 };
-Business.navigationOptions = () => {
-  return {
-    headerTitle: <Header title="Business" />,
-  };
-};
 
-export default Business;
+export default Header;
